@@ -27,4 +27,4 @@ do
   # poster
   ffmpeg -i $i -y -vframes 1 -vf scale=1280:-2 -q:v 1 $of.jpg
 done
-rm ffmpeg2pass-0.log
+rm ffmpeg2pass-*.log
