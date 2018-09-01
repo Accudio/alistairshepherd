@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
+
+# ffmpeg log
+ffmpeg*.log
+
+# Generated files
+static/manifest*.json
+static/sw.js
+static/workbox-sw*.js
