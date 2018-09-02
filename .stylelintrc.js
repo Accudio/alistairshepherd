@@ -1,6 +1,9 @@
 module.exports = {
   extends: 'stylelint-config-sass-guidelines',
-  "plugins": [
+  // 'processors': [
+  //   'stylelint-processor-html'
+  // ],
+  'plugins': [
     'stylelint-scss'
   ],
   rules: {
@@ -17,8 +20,9 @@ module.exports = {
     'selector-no-qualifying-type': null,
     'selector-max-id': null,
     'selector-class-pattern': null,
-    'scss/at-rule-no-unknown': [ true, {
-      'ignoreAtRules': ['import-normalize']
-    } ],
+    'scss/at-rule-no-unknown': [
+      true,
+      { 'ignoreAtRules': ['import-normalize'] }
+    ],
   }
 }

@@ -1,6 +1,7 @@
 var styleLintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
+  plugins: [ '~/plugins/eventBus.js' ],
   /*
   ** Headers of the page
   */
@@ -31,9 +32,9 @@ module.exports = {
   */
   css: ['@/assets/main.scss'/*, 'node_modules/simplebar/dist/simplebar.css'*/],
   /*
-  ** Customize the progress bar color
+  ** Custom loading component
   */
-  loading: { color: '#3B8070' },
+  loading: '~/components/Loading.vue',
   /**
    ** Manifest
    */

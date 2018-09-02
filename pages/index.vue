@@ -18,6 +18,7 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/016vallesmarineris_reduced0.5.jpg" style="width:300px;" defer >
     </div>
   </section>
 </template>

@@ -4,6 +4,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      window.addEventListener('load', () => {
+        this.$nuxt.$loading.finish()
+      })
+    })
+  }
+}
+</script>
+
 <style>
 html {
   box-sizing: border-box;

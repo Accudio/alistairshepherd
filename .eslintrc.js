@@ -21,6 +21,7 @@ module.exports = {
     "indent": [2, 2],
     "no-tabs": 2,
     "no-new": 0,
-    "space-before-function-paren": [2, "never"]
+    "space-before-function-paren": [2, "never"],
+    "vue/max-attributes-per-line": 0
   }
 }
