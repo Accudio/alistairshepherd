@@ -1,7 +1,7 @@
 var styleLintPlugin = require('stylelint-webpack-plugin')
 
 module.exports = {
-  plugins: [ '~/plugins/eventBus.js' ],
+  plugins: [ '~/plugins/eventBus.js', '~/plugins/fontawesome.js' ],
   /*
   ** Headers of the page
   */

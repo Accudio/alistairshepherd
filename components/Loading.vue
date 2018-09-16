@@ -32,5 +32,6 @@ export default {
   text-align: center;
   top: 0;
   width: 100%;
+  z-index: 999;
 }
 </style>
