@@ -31,7 +31,6 @@
     "autoprefixer": "^9.1.3",
     "cssnano": "^4.1.0",
     "husky": "^0.14.3",
-    "iphone-inline-video": "^2.2.2",
     "nuxt": "^1.0.0",
     "postcss-normalize": "^6.0.0",
     "simplebar": "^3.0.0-beta.4"

@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import enableInlineVideo from 'iphone-inline-video'
-
 export default {
   data: () => ({
     hidden: true
@@ -23,7 +21,6 @@ export default {
   methods: {
     videoActivity() {
       var video = document.getElementById('bgvideo')
-      enableInlineVideo(video, {iPad: true})
       var t
       window.onload = resetTimer
       window.onmousemove = resetTimer
@@ -83,10 +80,8 @@ export default {
       @media screen and (min-aspect-ratio: 2600/1080) {
         width: 100%;
       }
-
-      @media screen and (max-width: 899.9px) and (min-aspect-ratio: 1/1) {
-        height: auto;
-        width: 100%;
+      @media screen and (max-width: 499.9px) {
+        display: none;
       }
     }
   }
@@ -100,13 +95,5 @@ export default {
     top: 0;
     z-index: 2;
   }
-}
-
-// background video on iOS 8 and 9
-.IIV::-webkit-media-controls-play-button,
-.IIV::-webkit-media-controls-start-playback-button {
-  opacity: 0;
-  pointer-events: none;
-  width: 5px;
 }
 </style>
