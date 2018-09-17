@@ -1,8 +1,5 @@
 module.exports = {
   extends: 'stylelint-config-sass-guidelines',
-  // 'processors': [
-  //   'stylelint-processor-html'
-  // ],
   'plugins': [
     'stylelint-scss'
   ],
@@ -24,5 +21,9 @@ module.exports = {
       true,
       { 'ignoreAtRules': ['import-normalize'] }
     ],
+    'function-url-quotes': [
+      'always',
+      { 'except': ['empty'] }
+    ]
   }
 }

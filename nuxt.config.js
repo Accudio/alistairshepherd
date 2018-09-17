@@ -39,13 +39,16 @@ module.exports = {
    ** Manifest
    */
   manifest: {
+    author: 'Alistair Shepherd',
     name: 'Alistair Shepherd - Freelance Frontend Developer',
-    short_name: 'Alistair Shepherd',
+    short_name: 'A Shepherd',
     lang: 'en',
-    theme_color: '#3B8070',
-    background_color: '#f6f6f6',
+    theme_color: '#ffffff',
+    background_color: '#0f1514',
     description: 'Portfolio and introduction to Scottish Frontend Web Developer Alistair Shepherd',
-    display: 'standalone'
+    display: 'standalone',
+    mobileAppIOS: true,
+    ogHost: 'https://alistairshepherd.co.uk'
   },
   /*
   ** Build configuration

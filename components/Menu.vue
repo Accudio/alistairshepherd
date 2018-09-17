@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ 'active': menuActive }" class="primary-menu" role="navigation" aria-label="Main Menu">
+  <nav :class="{ 'active': menuActive }" :style="{ 'background-color': 'rgba(15, 21, 20, '+navOpacity+')' }" class="primary-menu" role="navigation" aria-label="Main Menu">
     
     <button class="toggle" aria-label="Mobile Menu Toggle" @click="toggleMenu">
       <div class="open">
@@ -27,6 +27,9 @@
               </li>
               <li class="nav-item">
                 <nuxt-link to="/projects">PROJECTS</nuxt-link>
+              </li>
+              <li class="nav-item">
+                <nuxt-link to="/work">WORK</nuxt-link>
               </li>
               <li class="nav-item">
                 <nuxt-link to="/contact">CONTACT</nuxt-link>
@@ -65,37 +68,31 @@
 </template>
 
 <script>
-import MenuButton from '../components/MenuButton'
-
 export default {
-  components: {
-    MenuButton
+  props: {
+    pageScroll: {
+      type: Number,
+      default: 1
+    }
   },
   data: () => ({
     menuActive: false,
-    buttonText: 'MENU',
-    buttonTransition: false
   }),
+  computed: {
+    navOpacity() {
+      return (this.pageScroll >=54) ? 1 : (0 + this.pageScroll / 54).toFixed(2);
+    }
+  },
   created() {
     this.$bus.$on('page-mount', () => { this.menuActive = false })
-    this.$bus.$on('routeChange', () => { this.toggleMenu(true) })
+    this.$bus.$on('route-change', () => { this.toggleMenu(true) })
   },
   methods: {
     toggleMenu(inp) {
       if (this.menuActive === true || inp === true) {
-        this.buttonTransition = true
         this.menuActive = false
-        setTimeout(() => {
-          this.buttonText = 'MENU'
-          this.buttonTransition = false
-        }, 300)
       } else {
-        this.buttonTransition = true
         this.menuActive = true
-        setTimeout(() => {
-          this.buttonText = 'CLOSE'
-          this.buttonTransition = false
-        }, 300)
       }
     }
   },
@@ -107,9 +104,9 @@ export default {
 $nav-break: 900px;
 $background: #0f1514;
 $menu-height: 4.5rem;
+$toggle-animation-time: .2s;
 
 .primary-menu {
-  background: #f00;
   height: $menu-height;
   position: absolute;
   top: 0;
@@ -126,10 +123,11 @@ $menu-height: 4.5rem;
     cursor: pointer;
     display: block;
     height: $menu-height;
+    outline: 0;
     position: absolute;
     right: 0;
     top: 0;
-    width: $menu-height*1.5;
+    width: $menu-height*1.4;
     z-index: 10;
 
     @media screen and (min-width: $nav-break) {
@@ -142,7 +140,7 @@ $menu-height: 4.5rem;
       display: flex;
       justify-content: center;
       left: 0;
-      padding: .75rem 1rem;
+      padding: .75rem .5rem;
       position: absolute;
       right: 0;
       top: 0;
@@ -156,16 +154,24 @@ $menu-height: 4.5rem;
         font-family: 'Exo', sans-serif;
         font-size: 1.3rem;
         overflow: hidden;
-        transition: height .5s;
+        padding: 0 .4rem;
       }
     }
 
     .open .btn-text {
       height: 100%;
+      transition-delay: $toggle-animation-time;
+      transition-duration: $toggle-animation-time;
+      transition-property: height, visibility;
+      visibility: visible;
     }
 
     .close .btn-text {
       height: 0;
+      transition-delay: 0s;
+      transition-duration: $toggle-animation-time;
+      transition-property: height, visibility;
+      visibility: hidden;
     }
   }
 
@@ -216,6 +222,10 @@ $menu-height: 4.5rem;
               height: 4rem;
               width: 100%;
 
+              @media screen and (max-width: $nav-break - .1) and (min-aspect-ratio: 1/1) {
+                height: 12vh;
+              }
+
               &:last-child {
                 border-bottom: 1px solid rgba(255, 255, 255, .1);
               }
@@ -238,6 +248,11 @@ $menu-height: 4.5rem;
                   box-shadow: inset 0 0 1.5rem 0 rgba(0, 0, 0, .3);
                   color: rgba(255, 255, 255, 1);
                 }
+
+
+                @media screen and (max-width: $nav-break - .1) and (min-aspect-ratio: 1/1) {
+                  font-size: 6vh;
+                }
               }
             }
           }
@@ -246,6 +261,7 @@ $menu-height: 4.5rem;
 
       .menu-social {
         bottom: 0;
+        font-size: 2rem;
         left: 0;
         margin-bottom: 1rem;
         margin-left: auto;
@@ -254,13 +270,25 @@ $menu-height: 4.5rem;
         right: 0;
         width: fit-content;
 
+        @media screen and (min-width: $nav-break) {
+          font-size: 1.1rem;
+        }
+
+        @media screen and (max-width: $nav-break - .1) and (min-aspect-ratio: 1/1) {
+          font-size: 1rem;
+        }
+
         .social-buttons {
           list-style: none;
           padding: 0;
 
           li {
             display: inline-block;
-            margin: 0 .5rem;
+            margin: 0 1rem;
+
+            @media screen and (min-width: $nav-break) {
+              margin: 0 .5rem;
+            }
 
             a {
               color: rgba(255, 255, 255, .6);
@@ -279,11 +307,19 @@ $menu-height: 4.5rem;
   &.active {
     .toggle {
       .open .btn-text {
-        animation: btn-open 1s 0s 1 forwards;
+        height: 0;
+        transition-delay: 0s;
+        transition-duration: $toggle-animation-time;
+        transition-property: height, visibility;
+        visibility: hidden;
       }
 
       .close .btn-text {
         height: 100%;
+        transition-delay: $toggle-animation-time;
+        transition-duration: $toggle-animation-time;
+        transition-property: height, visibility;
+        visibility: visible;
       }
     }
 
@@ -293,8 +329,15 @@ $menu-height: 4.5rem;
   }
 }
 
-@keyframes btn-open {
-  0% { height: 100%; }
-  100% { height: 0; }
+// internet explorer displays social media buttons incorrectly, center them through alternative means
+@media all and (-ms-high-contrast: none) {
+  .primary-menu .menu .menu-main .menu-social {
+    left: 50%;
+    transform: translate(-50%);
+    
+    .social-buttons {
+      text-align: center;
+    }
+  }
 }
 </style>

@@ -6,6 +6,7 @@
 }
 
 html {
+  background: #0f1514;
   font-family: 'Exo', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -29,4 +30,8 @@ h1, h2, h3, h4, h5 {
 
 .appear {
   opacity: 0;
+}
+
+.svg-inline--fa {
+  width: .875em;
 }
