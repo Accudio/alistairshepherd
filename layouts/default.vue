@@ -171,11 +171,11 @@ $nav-break: 900px;
 
           h1 {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
           }
 
           p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
           }
 
           hr {

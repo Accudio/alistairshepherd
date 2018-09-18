@@ -3,12 +3,11 @@
     <section class="page-content">
       <h1>Projects</h1>
       <p>
-        This is a few of my best and most recent web development projects.
+        These are a few of my best and most recent projects. I like experimenting with different technologies and libraries, most recently in javascript frameworks like Vue.js and React.js.
       </p>
       <p>
         My open-source projects can be found on <a href="https://github.com/accudio">GitHub</a>, and you can find more information about my professional experience and work on the <nuxt-link to="/work">Work page</nuxt-link>.
       </p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/01R_26_October_2010.jpg" width="200">
     </section>
   </div>
 </template>

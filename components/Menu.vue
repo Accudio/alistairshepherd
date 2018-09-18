@@ -55,11 +55,19 @@
               </a>
             </li>
             <li>
+              <a href="https://instagram.com/accudio">
+                <font-awesome-icon :icon="['fab', 'instagram']" />
+              </a>
+            </li>
+            <li>
               <a href="https://linkedin.com/in/alistairjshepherd">
                 <font-awesome-icon :icon="['fab', 'linkedin']" />
               </a>
             </li>
           </ul>
+          <div class="footer">
+            <nuxt-link to="/privacy-policy" class="">Privacy Policy</nuxt-link>
+          </div>
         </div>
       </div>
     </div>
@@ -263,7 +271,7 @@ $toggle-animation-time: .2s;
         bottom: 0;
         font-size: 2rem;
         left: 0;
-        margin-bottom: 1rem;
+        margin-bottom: .3rem;
         margin-left: auto;
         margin-right: auto;
         position: absolute;
@@ -280,6 +288,7 @@ $toggle-animation-time: .2s;
 
         .social-buttons {
           list-style: none;
+          margin-bottom: .3rem;
           padding: 0;
 
           li {
@@ -297,6 +306,21 @@ $toggle-animation-time: .2s;
               &:hover, &:focus {
                 color: rgba(255, 255, 255, 1);
               }
+            }
+          }
+        }
+
+        .footer {
+          font-size: .8rem;
+          font-style: italic;
+          text-align: center;
+
+          a {
+            color: rgba(255, 255, 255, .3);
+            transition: color .2s;
+
+            &:hover, &:focus {
+              color: rgba(255, 255, 255, .6);
             }
           }
         }
