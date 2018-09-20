@@ -1,5 +1,5 @@
 <template>
-  <div id="page-home">
+  <div id="page-home" class="page-home">
     <section class="home">
       <animated-text />
     </section>

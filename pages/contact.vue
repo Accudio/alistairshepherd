@@ -1,5 +1,5 @@
 <template>
-  <div id="page">
+  <div id="page" class="page">
     <section class="page-content">
       <h1>Contact Me</h1>
       <p>I am currently available for work, so if you have any freelance, contract, or full time positions in website design or development I would be thrilled to discuss these with you!</p>
@@ -68,15 +68,24 @@ export default {
   }),
   watch: {
     tab() {
-      setTimeout(() => {
-        let mid = this.$refs.social.offsetLeft + this.$refs.social.offsetWidth / 2
-        let center = (typeof(this.$refs.active) !== 'undefined') ? this.$refs.active.offsetLeft + this.$refs.active.offsetWidth / 2 : mid
-        this.pointerX = center - mid
-      }, 100)
+      setTimeout(this.updateArrow, 100)
     }
   },
   mounted() {
     this.$bus.$emit('page-mount', 1)
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.updateArrow);
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateArrow);
+  },
+  methods: {
+    updateArrow() {
+      let mid = this.$refs.social.offsetLeft + this.$refs.social.offsetWidth / 2
+      let center = (typeof(this.$refs.active) !== 'undefined') ? this.$refs.active.offsetLeft + this.$refs.active.offsetWidth / 2 : mid
+      this.pointerX = center - mid
+    }
   }
 }
 </script>

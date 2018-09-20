@@ -145,7 +145,7 @@ $nav-break: 900px;
         display: none;
       }
 
-      #page, #page-home {
+      .page, .page-home {
         height: 100vh;
         margin-left: auto;
         margin-right: auto;

@@ -91,10 +91,16 @@ export default {
   .row {
     align-items: flex-end;
     display: flex;
+    flex-wrap: wrap;
 
     .form-input {
       flex: 1;
+      flex-basis: 100%;
       padding: 0 1rem 1.5rem;
+
+      @media screen and (min-width: 500px) {
+        flex-basis: 50%;
+      }
 
       label {
         display: block;
@@ -110,8 +116,13 @@ export default {
         outline: none;
         padding: 10px;
         resize: none;
+        text-align: center;
         transition: all .3s;
         width: 100%;
+
+        @media screen and (min-width: 500px) {
+          text-align: left;
+        }
 
         &:focus {
           border-color: #fff;

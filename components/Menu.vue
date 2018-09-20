@@ -293,7 +293,11 @@ $toggle-animation-time: .2s;
 
           li {
             display: inline-block;
-            margin: 0 1rem;
+            margin: 0 .5rem;
+
+            @media screen and (min-width: 315px) {
+              margin: 0 1rem;
+            }
 
             @media screen and (min-width: $nav-break) {
               margin: 0 .5rem;
