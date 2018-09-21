@@ -43,12 +43,13 @@ module.exports = {
     name: 'Alistair Shepherd - Freelance Frontend Developer',
     short_name: 'A Shepherd',
     lang: 'en',
-    theme_color: '#ffffff',
+    theme_color: '#0f1514',
     background_color: '#0f1514',
     description: 'Portfolio and introduction to Scottish Frontend Web Developer Alistair Shepherd',
     display: 'standalone',
-    mobileAppIOS: true,
-    ogHost: 'https://alistairshepherd.co.uk'
+    nativeUI: true,
+    ogHost: 'https://alistairshepherd.co.uk',
+    ogImage: '/static/open-graph.png'
   },
   /*
   ** Build configuration
