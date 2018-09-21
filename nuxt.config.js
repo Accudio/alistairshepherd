@@ -49,7 +49,7 @@ module.exports = {
     display: 'standalone',
     nativeUI: true,
     ogHost: 'https://alistairshepherd.co.uk',
-    ogImage: '/static/open-graph.png'
+    ogImage: '/open-graph.png'
   },
   /**
    ** Sitemap
