@@ -9,8 +9,7 @@
       <h3>Opt-out of tracking</h3>
       <p>I would really appreciate if users let me collect information about their visit to alistairshepherd.co.uk as it allows me to improve our website and services based upon user interaction. If you do not wish to be tracked however, alistairshepherd.co.uk respects your browsers 'Do Not Track' setting or you can opt out of tracking below. This stores an anonymised non-expiring cookie in your browser that is used to identify devices that should not be tracked.</p>
       <hr>
-      <!-- <p><iframe src="PIWIK ANALYTICS URL" width="300" height="150" /></p> -->
-      <p>&lt;iframe src="PIWIK ANALYTICS URL" width="300" height="150" /&gt;</p>
+      <p><iframe src="https://analytics.accudio.com/index.php?module=CoreAdminHome&action=optOut&idsite=12&language=en" /></p>
       <hr>
       <h3>Gathering of Personally-Identifying Information</h3>
       <p>Certain aspects of alistairshepherd.co.uk have facilities to collect personal information for a specific purpose. For example, in the contact form. This information is only stored for the purpose responding to contact forms, and will only ever be disclosed to Alistair Shepherd without further consent. Visitors are also of course able to refuse to supply this information by not using the contact form and contacting me through other means.</p>

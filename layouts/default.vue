@@ -56,6 +56,7 @@ export default {
       })
     })
     this.route = ($nuxt.$route.path !== '/') ? true : false
+    this.analytics()
   },
   created() {
     this.$bus.$on('page-mount', () => { this.scrollbar() })
@@ -74,6 +75,18 @@ export default {
           this.pageScroll = el.getScrollElement().scrollTop
         })
       }
+    },
+    analytics() {
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://analytics.accudio.com/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '12']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
     }
   }
 }
