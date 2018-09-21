@@ -51,6 +51,13 @@ module.exports = {
     ogHost: 'https://alistairshepherd.co.uk',
     ogImage: '/static/open-graph.png'
   },
+  /**
+   ** Sitemap
+   */
+  sitemap: {
+    hostname: 'https://alistairshepherd.co.uk',
+    generate: true
+  },
   /*
   ** Build configuration
   */
@@ -120,6 +127,7 @@ module.exports = {
   ** Modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ]
 }
