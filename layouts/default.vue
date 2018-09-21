@@ -52,7 +52,7 @@ export default {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
       window.addEventListener('load', () => {
-        //this.$nuxt.$loading.finish()
+        this.$nuxt.$loading.finish()
       })
     })
     this.route = ($nuxt.$route.path !== '/') ? true : false
@@ -68,7 +68,6 @@ export default {
   },
   methods: {
     scrollbar() {
-      // const SimpleBar = require('simplebar')
       if (document.getElementById('page')) {
         var el = new SimpleBar(document.getElementById('page'))
         el.getScrollElement().addEventListener('scroll', () => {
