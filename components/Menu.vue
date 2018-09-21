@@ -40,27 +40,27 @@
         <div class="menu-social">
           <ul class="social-buttons">
             <li>
-              <a href="https://twitter.com/Accudio">
+              <a href="https://twitter.com/Accudio" title="Twitter: @accudio">
                 <font-awesome-icon :icon="['fab', 'twitter']" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/Accudio">
+              <a href="https://github.com/Accudio" title="GitHub: Accudio">
                 <font-awesome-icon :icon="['fab', 'github']" />
               </a>
             </li>
             <li>
-              <a href="mailto:alistair@accudio.com">
+              <a href="mailto:alistair@accudio.com" title="Email: alistair@accudio.com">
                 <font-awesome-icon :icon="['fas', 'envelope']" />
               </a>
             </li>
             <li>
-              <a href="https://instagram.com/accudio">
+              <a href="https://instagram.com/accudio" title="Instagram: accudio">
                 <font-awesome-icon :icon="['fab', 'instagram']" />
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/alistairjshepherd">
+              <a href="https://linkedin.com/in/alistairjshepherd" title="LinkedIn: alistairjshepherd">
                 <font-awesome-icon :icon="['fab', 'linkedin']" />
               </a>
             </li>

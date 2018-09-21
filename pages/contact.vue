@@ -38,13 +38,13 @@
             You can contact me through one of the methods above
           </div>
           <div v-if="tab === 'email'" key="email">
-            Email me at <a href="mailto:alistair@accudio.com">alistair@accudio.com</a>
+            Email me at <a href="mailto:alistair@accudio.com" title="Email: alistair@accudio.com">alistair@accudio.com</a>
           </div>
           <div v-if="tab === 'twitter'" key="twitter">
-            Find me on Twitter, <a href="https://twitter.com/accudio">@Accudio</a>
+            Find me on Twitter, <a href="https://twitter.com/accudio" title="Twitter: @accudio">@Accudio</a>
           </div>
           <div v-if="tab === 'phone'" key="phone">
-            You can call me on my mobile at <a href="tel:+447484272335">07484 272 335</a>
+            You can call me on my mobile at <a href="tel:+447484272335" title="Call: 07484 272 335">07484 272 335</a>
           </div>
           <div v-if="tab === 'form'" key="form">
             <ContactForm />
