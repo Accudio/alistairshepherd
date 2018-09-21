@@ -13,7 +13,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Portfolio and introduction to Scottish Frontend Web Developer Alistair Shepherd' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#00aba9' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Exo:300,400,700' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Vollkorn' }
     ]
@@ -67,6 +67,38 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      config.module.rules.forEach((rule) => {
+        if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg)$/'){
+          rule.use = [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 2000, //change url-loader limit to 2kB
+                name: 'img/[name].[hash:7].[ext]'
+              }
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                  quality: 65
+                },
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: '65-90',
+                  speed: 1,
+                  verbose: true
+                }
+              }
+            }
+          ];
+          delete rule.loader;
+          delete rule.options;
+        }
+      })
     },
     plugins: [
       new styleLintPlugin({
@@ -75,8 +107,15 @@ module.exports = {
         failOnError: false,
         quiet: false,
       })
-    ]
+    ],
+    vueLoader: {
+      transformAssetUrls: {
+        video: 'poster',
+        source: 'src'
+      }
+    }
   },
+  vendor: ['image-webpack-loader'],
   /*
   ** Modules
   */
