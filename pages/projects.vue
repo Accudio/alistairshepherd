@@ -13,7 +13,7 @@
           <li>
             <h2><a href="https://mytopspotify.io">My Top for Spotify</a> &mdash; Web App to display your top Spotify tracks and artists</h2>
             <p>My Top for Spotify is a Web App I created in <a href="https://reactjs.org/">React.js</a> to show a users most played artists and tracks using the <a href="https://spotify.com">Spotify</a> API. Although similar websites already, I wanted MTfS to stand out in design and appearance and also include improvements in user experience.</p>
-            <p>It also served to broaden my experience in embracing the power of dynamic JavaScript apps, in developing a authentication server with <a href="https://nodejs.org">node.js</a> and deploying serverless on <a href="https://aws.amazon.com/#">AWS</a>.</p>
+            <p>It also served to broaden my experience in embracing the power of dynamic JavaScript apps, in developing a authentication server with <a href="https://nodejs.org">node.js</a> and deploying serverless on <a href="https://aws.amazon.com/#">AWS</a>. Source available on Github: <a href="https://github.com/accudio/mytopforspotify-webclient">Web Client</a>, <a href="https://github.com/accudio/mytopforspotify-server">Server</a>.</p>
           </li>
           <li>
             <h2><a href="https://responsive.accudio.com">Accudio Responsive</a> &mdash; Simple Vue.js app presenting websites on a range of devices</h2>
