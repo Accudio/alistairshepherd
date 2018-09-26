@@ -6,6 +6,7 @@ Website for Alistair Shepherd at [alistairshepherd.co.uk][alistairshepherdurl]. 
 
 ## Version History
 
+- v1.0.0 - Release version for public publishing
 - v0.3.0 - Rebuild from scratch to address fundamental problems in architecture
 - v0.2.0 - Initial stable presentable version
 
@@ -22,6 +23,6 @@ $ npm run dev
 $ npm run generate
 ```
 
-[alistairshepherdurl]:https://alistairshepherd.co.uk/
+[alistairshepherdurl]:https://alistairshepherd.uk/
 [accudiourl]:https://accudio.com/
 [nuxtdocs]:https://github.com/nuxt/nuxt.js
