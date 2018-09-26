@@ -33,23 +33,23 @@
         </div>
       </div>
       <div class="tab-contents">
-        <transition name="fade" mode="out-in">
-          <div v-if="tab === ''" key="none">
+        <transition-group name="fade" mode="out-in">
+          <div v-show="tab === ''" key="none">
             You can contact me through one of the methods above
           </div>
-          <div v-if="tab === 'email'" key="email">
+          <div v-show="tab === 'email'" key="email">
             Email me at <a href="mailto:alistair@accudio.com" title="Email: alistair@accudio.com">alistair@accudio.com</a>
           </div>
-          <div v-if="tab === 'twitter'" key="twitter">
+          <div v-show="tab === 'twitter'" key="twitter">
             Find me on Twitter, <a href="https://twitter.com/accudio" title="Twitter: @accudio">@Accudio</a>
           </div>
-          <div v-if="tab === 'phone'" key="phone">
+          <div v-show="tab === 'phone'" key="phone">
             You can call me on my mobile at <a href="tel:+447484272335" title="Call: 07484 272 335">07484 272 335</a>
           </div>
-          <div v-if="tab === 'form'" key="form">
+          <div v-show="tab === 'form'" key="form">
             <ContactForm />
           </div>
-        </transition>
+        </transition-group>
       </div>
     </section>
   </div>
@@ -183,12 +183,22 @@ $linecol: #bbb;
   }
 }
 
+.tab-contents {
+  position: relative;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s;
 }
 
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+.fade-leave-active {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 </style>
