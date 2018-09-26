@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alistairshepherd.co.uk/sitemap.xml
+Sitemap: https://alistairshepherd.uk/sitemap.xml

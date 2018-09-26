@@ -48,14 +48,14 @@ module.exports = {
     description: 'Portfolio and introduction to Scottish Frontend Web Developer Alistair Shepherd',
     display: 'standalone',
     nativeUI: true,
-    ogHost: 'https://alistairshepherd.co.uk',
+    ogHost: 'https://alistairshepherd.uk',
     ogImage: '/open-graph.png'
   },
   /**
    ** Sitemap
    */
   sitemap: {
-    hostname: 'https://alistairshepherd.co.uk',
+    hostname: 'https://alistairshepherd.uk',
     generate: true
   },
   /*
