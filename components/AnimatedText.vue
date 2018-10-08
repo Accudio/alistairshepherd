@@ -12,7 +12,7 @@
     </div>
     <div class="subtitle">
       <div :class="{ 'subtitle-wrap-active': subtitleWrapActive }" class="subtitle-wrap">
-        <h2>Frontend Web Developer in the Scottish Highlands</h2>
+        <h2>Full Stack Web Developer in the Scottish Highlands</h2>
       </div>
     </div>
   </div>
