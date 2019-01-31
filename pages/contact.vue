@@ -2,7 +2,7 @@
   <div id="page" class="page">
     <section class="page-content">
       <h1>Contact Me</h1>
-      <p>I am currently available for work, so if you have any freelance, contract, or full time positions in website design or development I would be thrilled to discuss these with you!</p>
+      <p>I am not currently looking for work, however if you'd like to get in touch with me about any of my projects, please do so!</p>
       <div class="social-flash">
         <ul ref="social">
           <li>
