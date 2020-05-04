@@ -34,7 +34,8 @@ module.exports = {
   generate: {
     fallback: true,
     minify: {
-      collapseWhitespace: false
+      collapseWhitespace: false,
+      removeOptionalTags: false
     }
   },
   /*

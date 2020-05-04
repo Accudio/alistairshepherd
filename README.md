@@ -6,6 +6,7 @@ Website for Alistair Shepherd at [alistairshepherd.co.uk][alistairshepherdurl]. 
 
 ## Version History
 
+- v1.1.1  - Tweaked Nuxt HTML minifier so `</body>` and `</html>` are not removed
 - v1.1.0  - Added Countly analytics support, consent dialog and made a couple tweaks
 - v1.0.0  - Release version for public publishing
 - v0.3.0  - Rebuild from scratch to address fundamental problems in architecture
