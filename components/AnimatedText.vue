@@ -12,7 +12,7 @@
     </div>
     <div class="subtitle">
       <div :class="{ 'subtitle-wrap-active': subtitleWrapActive }" class="subtitle-wrap">
-        <h2>Full Stack Web Developer in the Scottish Highlands</h2>
+        <h2>Full Stack Web Developer in Edinburgh and the Scottish&nbsp;Highlands</h2>
       </div>
     </div>
   </div>
@@ -146,14 +146,16 @@ export default {
 
       h2 {
         font-weight: 300;
+        max-width: 100%;
         text-align: center;
+        width: 35rem;
       }
     }
   }
 }
 
 // firefox doesn't support animating the width of an svg mask with percentages, so using opacity
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
   .logo-wrap .logo {
     #mask-rect {
       animation: none !important;

@@ -7,10 +7,8 @@
       <p>Like most website operators, alistairshepherd.uk collects non-personally-identifying information of the sort that web browsers and servers typically make available, such as the browser type, language preference, referring site, and the date and time of each visitor request. My purpose in collecting non-personally identifying information is to better understand how visitors use my website.</p>
       <p>alistairshepherd.uk also collects potentially personally-identifying information like Internet Protocol (IP) addresses. I do not use such information to identify our visitors, however, and this information is anonymised before being presented to administrators, and will never be disclosed to persons outside of those who work on alistairshepherd.uk.</p>
       <h3>Opt-out of tracking</h3>
-      <p>I would really appreciate if users let me collect information about their visit to alistairshepherd.uk as it allows me to improve our website and services based upon user interaction. If you do not wish to be tracked however, alistairshepherd.uk respects your browsers 'Do Not Track' setting or you can opt out of tracking below. This stores an anonymised non-expiring cookie in your browser that is used to identify devices that should not be tracked.</p>
-      <hr>
-      <p><iframe src="https://analytics.accudio.com/index.php?module=CoreAdminHome&action=optOut&idsite=12&language=en" /></p>
-      <hr>
+      <p>I would really appreciate if users let me collect information about their visit to alistairshepherd.uk as it allows me to improve my website and services based upon user interaction. If you do not wish to be tracked however, you can opt out of tracking using our <a href="#consent">Consent Dialog</a>. This stores an anonymised non-expiring cookie in your browser that is used to identify devices that should not be tracked.</p>
+      <p><a href="#consent">Open Consent Dialog</a></p>
       <h3>Gathering of Personally-Identifying Information</h3>
       <p>Certain aspects of alistairshepherd.uk have facilities to collect personal information for a specific purpose. For example, in the contact form. This information is only stored for the purpose responding to contact forms, and will only ever be disclosed to Alistair Shepherd without further consent. Visitors are also of course able to refuse to supply this information by not using the contact form and contacting me through other means.</p>
       <h3>Protection of Information</h3>

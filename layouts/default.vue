@@ -12,6 +12,24 @@
       </div>
     </div>
     <Menu :page-scroll="pageScroll"/>
+    <vue-cookie-accept-decline
+      ref="consent"
+      :debug="false"
+      :position="'bottom-left'"
+      element-id="consent"
+      @status="consentStart"
+      @clicked-accept="consentAccept"
+      @clicked-decline="consentDecline">
+      <div slot="message">
+        We collect and process your personal information for the following purposes: Analytics. <nuxt-link to="/privacy-policy/">Learn More...</nuxt-link>
+      </div>
+      <div slot="declineContent">
+        Decline
+      </div>
+      <div slot="acceptContent">
+        Accept
+      </div>
+    </vue-cookie-accept-decline>
   </div>
 </template>
 
@@ -20,6 +38,10 @@
 import SimpleBar from 'simplebar'
 import 'simplebar/dist/simplebar.css'
 
+// cookie notice
+import VueCookieAcceptDecline from 'vue-cookie-accept-decline'
+import 'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css'
+
 // components
 import Menu from '../components/Menu'
 import Video from '../components/Video'
@@ -27,6 +49,7 @@ import Head from '../components/Head'
 
 export default {
   components: {
+    VueCookieAcceptDecline,
     Menu,
     Video,
     Head
@@ -34,7 +57,13 @@ export default {
   data: () => ({
     pageScroll: 0,
     route: false,
-    loaded: false
+    loaded: false,
+    countlyConsent: [
+      'sessions',
+      'events',
+      'views',
+      'crashes'
+    ]
   }),
   computed: {
     headerOpacity() {
@@ -46,6 +75,10 @@ export default {
       this.pageScroll = 0
       this.$bus.$emit('route-change')
       this.route = ($nuxt.$route.path !== '/') ? true : false
+
+      if (typeof Countly !== 'undefined') {
+        Countly.q.push(['track_pageview'])
+      }
     }
   },
   mounted() {
@@ -56,6 +89,7 @@ export default {
       })
     })
     this.route = ($nuxt.$route.path !== '/') ? true : false
+    document.addEventListener('click', this.openConsent);
   },
   created() {
     this.$bus.$on('page-mount', () => { this.scrollbar() })
@@ -73,6 +107,26 @@ export default {
         el.getScrollElement().addEventListener('scroll', () => {
           this.pageScroll = el.getScrollElement().scrollTop
         })
+      }
+    },
+    consentStart(value) {
+      if (process.client && value !== 'decline') {
+        Countly.q.push(['add_consent', this.countlyConsent]);
+      }
+    },
+    consentAccept() {
+      Countly.q.push(['add_consent', this.countlyConsent]);
+    },
+    consentDecline() {
+      Countly.q.push(['remove_consent', this.countlyConsent]);
+    },
+    openConsent(e) {
+      let target = e.target || e.srcElement;
+      if (target.tagName === 'A' && target.getAttribute('href') === '#consent') {
+        e.preventDefault()
+        this.$refs.consent.removeCookie()
+        this.$refs.consent.init()
+        return false
       }
     }
   }
@@ -180,6 +234,63 @@ $nav-break: 900px;
           hr {
             margin: 2rem 0;
             opacity: .5;
+          }
+        }
+      }
+    }
+  }
+
+  .cookie {
+    background: #0f1514;
+    border: 0;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .4);
+    color: #fff;
+
+    &__floating {
+      &__content {
+        font-size: .75rem;
+        margin: 0;
+        padding: 10px 15px;
+
+        a {
+          color: rgba(#fff, .75);
+          text-decoration: underline;
+        }
+      }
+
+      &__buttons {
+        justify-content: flex-end;
+        padding: 0 15px 10px;
+
+        &__button {
+          border-radius: 5px;
+          font-size: .75rem;
+          min-height: 0;
+          width: auto;
+
+          &:not(.dud) {
+            border: 0;
+          }
+
+          &--accept {
+            background: #4caf50;
+            color: #fff;
+            margin-right: .5ch;
+            transition: background .2s;
+
+            &:hover {
+              background: darken(#4caf50, 15%);
+              color: #fff;
+            }
+          }
+
+          &--decline {
+            font-weight: normal;
+
+            &:not(.dud) {
+              background: none;
+              color: #fff;
+            }
           }
         }
       }

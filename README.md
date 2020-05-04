@@ -6,9 +6,10 @@ Website for Alistair Shepherd at [alistairshepherd.co.uk][alistairshepherdurl]. 
 
 ## Version History
 
-- v1.0.0 - Release version for public publishing
-- v0.3.0 - Rebuild from scratch to address fundamental problems in architecture
-- v0.2.0 - Initial stable presentable version
+- v1.1.0  - Added Countly analytics support, consent dialog and made a couple tweaks
+- v1.0.0  - Release version for public publishing
+- v0.3.0  - Rebuild from scratch to address fundamental problems in architecture
+- v0.2.0  - Initial stable presentable version
 
 ## Build setup
 Built with Nuxt.js, for more info: [Nuxt.js docs][nuxtdocs].
